@@ -1,11 +1,4 @@
-import {
-    StyleSheet,
-    Text,
-    View,
-    StatusBar,
-    SafeAreaView,
-    Platform,
-} from "react-native";
+import { StyleSheet, StatusBar, SafeAreaView, Platform } from "react-native";
 import CreatePost from "./components/CreatePost";
 import NavBar from "./components/NavBar";
 
