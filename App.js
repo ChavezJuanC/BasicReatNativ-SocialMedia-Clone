@@ -1,12 +1,32 @@
-import { StyleSheet, Text, View, StatusBar } from "react-native";
+import {
+    StyleSheet,
+    Text,
+    View,
+    StatusBar,
+    SafeAreaView,
+    Platform,
+} from "react-native";
+import CreatePost from "./components/CreatePost";
+import NavBar from "./components/NavBar";
 
 export default function App() {
     return (
-        <View>
-            <Text>Open up App.js to start working on your app!</Text>
-            <StatusBar style="auto" />
-        </View>
+        <SafeAreaView style={Styles.mainContainer}>
+            <>
+                <>
+                    <NavBar />
+                </>
+
+                <CreatePost />
+            </>
+        </SafeAreaView>
     );
 }
 
-const Styles = StyleSheet.create({});
+const Styles = StyleSheet.create({
+    mainContainer: {
+        flex: 1,
+        paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+        backgroundColor: "#f5f5f5",
+    },
+});
