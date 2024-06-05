@@ -3,7 +3,7 @@ import { View, Text, StyleSheet } from "react-native";
 const NavBar = () => {
     return (
         <View style={Styles.navView}>
-            <Text style={Styles.navText}>TheBookSpacef</Text>
+            <Text style={Styles.navText}>TheBookSpace</Text>
             <Text style={Styles.navText}>////</Text>
         </View>
     );
@@ -23,7 +23,7 @@ const Styles = StyleSheet.create({
     navText: {
         color: "white",
         fontSize: 20,
-        fontWeight: "900"
+        fontWeight: "900",
     },
 });
 

@@ -1,12 +1,14 @@
 import { StyleSheet, StatusBar, SafeAreaView, Platform } from "react-native";
 import CreatePost from "./components/CreatePost";
 import NavBar from "./components/NavBar";
+import Post from "./components/Post";
 
 export default function App() {
     return (
         <SafeAreaView style={Styles.mainContainer}>
             <NavBar />
             <CreatePost />
+            <Post />
         </SafeAreaView>
     );
 }
