@@ -5,13 +5,8 @@ import NavBar from "./components/NavBar";
 export default function App() {
     return (
         <SafeAreaView style={Styles.mainContainer}>
-            <>
-                <>
-                    <NavBar />
-                </>
-
-                <CreatePost />
-            </>
+            <NavBar />
+            <CreatePost />
         </SafeAreaView>
     );
 }
