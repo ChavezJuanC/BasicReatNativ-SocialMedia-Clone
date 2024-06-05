@@ -3,8 +3,8 @@ import { View, Text, StyleSheet } from "react-native";
 const NavBar = () => {
     return (
         <View style={Styles.navView}>
-            <Text style={Styles.navText}>MyBook</Text>
-            <Text style={Styles.navText}>///</Text>
+            <Text style={Styles.navText}>TheBookSpacef</Text>
+            <Text style={Styles.navText}>////</Text>
         </View>
     );
 };
@@ -12,7 +12,8 @@ const NavBar = () => {
 const Styles = StyleSheet.create({
     navView: {
         borderWidth: 5,
-        backgroundColor: "black",
+        borderColor: "#3b5998",
+        backgroundColor: "#3b5998",
         height: 60,
         flexDirection: "row",
         justifyContent: "space-between",
@@ -22,6 +23,7 @@ const Styles = StyleSheet.create({
     navText: {
         color: "white",
         fontSize: 20,
+        fontWeight: "900"
     },
 });
 

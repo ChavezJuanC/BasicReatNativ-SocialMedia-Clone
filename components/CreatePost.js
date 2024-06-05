@@ -20,6 +20,7 @@ const CreatePost = () => {
                 multiline
                 value={postContent}
                 onChangeText={setPostContent}
+                placeholder="What's on your mind?"
             />
             <View style={Styles.pressableView}>
                 <Pressable style={Styles.postButton} onPress={handdlePosting}>
@@ -39,6 +40,7 @@ const Styles = StyleSheet.create({
     newPostTextField: {
         height: 110,
         borderWidth: 2,
+        borderColor: "#303030",
         backgroundColor: "white",
         borderRadius: 10,
         textAlignVertical: "top",
@@ -49,12 +51,14 @@ const Styles = StyleSheet.create({
     },
     pressableView: {
         flexWrap: "wrap-reverse",
-        padding: 6,
+        paddingHorizontal: 6,
+        paddingTop: 8,
     },
     postButton: {
         height: 30,
         width: 65,
         borderWidth: 2,
+        borderColor: "#303030",
         borderRadius: 5,
         flexDirection: "row",
         alignItems: "center",
