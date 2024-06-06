@@ -1,20 +1,18 @@
 import { View, Image, Text, StyleSheet } from "react-native";
 
-const Post = () => {
+const Post = ({ userName, postBody }) => {
+
     return (
         <View style={Styles.postContainer}>
-            <View styl={Styles.userContainer}>
-                <>
-                    <Image
-                        style={Styles.userImg}
-                        source={{ uri: "https://picsum.photos/200" }}
-                    />
-                </>
-
-                <Text style={Styles.userName}>UserName</Text>
+            <View style={Styles.userContainer}>
+                <Image
+                    style={Styles.userImg}
+                    source={{ uri: "https://picsum.photos/200" }}
+                />
+                <Text style={Styles.userName}>{userName}</Text>
             </View>
             <>
-                <Text style={Styles.postBody}>Post body would go here!</Text>
+                <Text style={Styles.postBody}>{postBody}</Text>
             </>
         </View>
     );
@@ -22,13 +20,31 @@ const Post = () => {
 
 const Styles = StyleSheet.create({
     postContainer: {
-        borderWidth: 2,
+        maxHeight: 250,
+        borderColor: "black",
+        backgroundColor: "white",
+        borderWidth: 1,
+        padding: 10,
+        margin: 10,
+        borderRadius: 5,
     },
-    userContainer: {},
-    userImg: { width: 60, height: 60, borderRadius: 30
-     },
-    userName: {},
-    postBody: {},
+    userContainer: {
+        flexDirection: "row",
+    },
+    userImg: {
+        width: 60,
+        height: 60,
+        borderRadius: 30,
+    },
+    userName: {
+        textAlignVertical: "center",
+        padding: 15,
+        fontSize: 17,
+        fontWeight: "500",
+    },
+    postBody: {
+        padding: 10,
+    },
 });
 
 export default Post;

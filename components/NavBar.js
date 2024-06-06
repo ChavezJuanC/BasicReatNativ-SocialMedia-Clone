@@ -14,11 +14,12 @@ const Styles = StyleSheet.create({
         borderWidth: 5,
         borderColor: "#3b5998",
         backgroundColor: "#3b5998",
-        height: 60,
+        height: 70,
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",
         paddingHorizontal: 10,
+        marginBottom: 10,
     },
     navText: {
         color: "white",
