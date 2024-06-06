@@ -27,6 +27,7 @@ const Styles = StyleSheet.create({
         padding: 10,
         margin: 10,
         borderRadius: 5,
+        overflow: "scroll"
     },
     userContainer: {
         flexDirection: "row",

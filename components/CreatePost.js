@@ -1,14 +1,48 @@
-import { View, StyleSheet, TextInput, Pressable, Text } from "react-native";
+import {
+    View,
+    StyleSheet,
+    TextInput,
+    Pressable,
+    Text,
+    Alert,
+} from "react-native";
 import { useState } from "react";
 
-const CreatePost = () => {
+const CreatePost = ({ setPostList, postList }) => {
     const [isPosting, setIsPosting] = useState(false);
     const [postContent, setPostContent] = useState("");
 
-    const handdlePosting = () => {
+    const handdlePosting = async () => {
         setIsPosting(true);
-        console.log(postContent);
 
+        if (postContent.length > 300) {
+            setIsPosting(false);
+            return Alert.alert(
+                "Max Character Limit",
+                `You have exceeded the allowed 300 character count by ${
+                    postContent.length - 300
+                } charters`
+            );
+        }
+
+        const res = await fetch(
+            "https://jsonplaceholder.typicode.com/posts?_limit=10",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    title: "Post title",
+                    body: postContent,
+                    id: postList.length + 1,
+                }),
+            }
+        );
+
+        const newPost = await res.json();
+        setPostList([newPost, ...postList]);
+        console.log(newPost);
         setPostContent("");
         setIsPosting(false);
     };
