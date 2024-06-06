@@ -50,7 +50,7 @@ Once the application is running, you can create posts by interacting with the pr
 Creating a Post
 
     Open the app on your device or emulator.
-    Enter a username and post content.
+    Enter post content.
     Click the "Create Post" button to send the data to the API.
     The app will display the response, showing the newly created post.
 
@@ -59,7 +59,6 @@ Technologies
     React Native: Core framework for building mobile applications.
     JSON Placeholder API: Used for creating and retrieving post data.
     JavaScript: Primary language used in the project.
-    Axios: For making HTTP requests.
 
 Screenshots
 
