@@ -5,6 +5,7 @@ import {
     Platform,
     FlatList,
     View,
+    Alert,
 } from "react-native";
 import { useEffect, useState } from "react";
 import CreatePost from "./components/CreatePost";
@@ -14,11 +15,16 @@ import Post from "./components/Post";
 export default function App() {
     const [fetchedData, setFetchedData] = useState([]);
     const fetchPosts = async () => {
-        const res = await fetch(
-            "https://jsonplaceholder.typicode.com/posts?_limit=10"
-        );
-        const data = await res.json();
-        setFetchedData(data);
+        try {
+            const res = await fetch(
+                "https://jsonplaceholder.typicode.com/posts?_limit=10"
+            );
+            const data = await res.json();
+            setFetchedData(data);
+        } catch (error) {
+            console.error("Error Fetching Posts", error);
+            Alert.alert("Error", error);
+        }
     };
 
     useEffect(() => {

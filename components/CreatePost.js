@@ -25,26 +25,31 @@ const CreatePost = ({ setPostList, postList }) => {
             );
         }
 
-        const res = await fetch(
-            "https://jsonplaceholder.typicode.com/posts?_limit=10",
-            {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    title: "Post title",
-                    body: postContent,
-                    id: postList.length + 1,
-                }),
-            }
-        );
-
-        const newPost = await res.json();
-        setPostList([newPost, ...postList]);
-        console.log(newPost);
-        setPostContent("");
-        setIsPosting(false);
+        try {
+            const res = await fetch(
+                "https://jsonplaceholder.typicode.com/posts",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        title: "Post title",
+                        body: postContent,
+                        id: postList.length + 1,
+                    }),
+                }
+            );
+            console.log(postList.length + 1)
+            const newPost = await res.json();
+            setPostList([newPost, ...postList]);
+            console.log(newPost);
+            setPostContent("");
+            setIsPosting(false);
+        } catch (error) {
+            console.error("Error while posting... ", error);
+            Alert.alert("Error", error);
+        }
     };
 
     return (

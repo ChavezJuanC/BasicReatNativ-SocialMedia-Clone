@@ -87,3 +87,8 @@ Acknowledgements
 
     Thanks to the creators of React Native for providing such a powerful tool for mobile development.
     Shoutout to the JSON Placeholder team for offering a great tool for testing and prototyping.
+
+
+----known issues------
+
+"errors" : The "Multiple Posts with same id" error comes from the JSON placeholder API, assigning key 101 everytime. In a real api, make sure not to have the same id assigned to more than 1 list item.
