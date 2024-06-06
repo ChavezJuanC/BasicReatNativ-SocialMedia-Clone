@@ -5,7 +5,6 @@ import {
     Platform,
     FlatList,
     View,
-    ScrollView,
 } from "react-native";
 import { useEffect, useState } from "react";
 import CreatePost from "./components/CreatePost";
